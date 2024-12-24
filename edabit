@@ -1,0 +1,120 @@
+//Find the Smallest and Biggest Numbers
+function minMax(arr) {
+  let min = arr[0];
+  let max = arr[0];
+  
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  
+  return [min, max];
+}
+
+//Sum of Cubes
+function sumOfCubes(nums) {
+  let sum = 0;
+  for (let num of nums) {
+    sum += num ** 3;
+  }
+	return sum;
+}
+
+//Filter out Strings from an Array
+function filterArray(arr) {
+    return arr.filter(item => typeof item === 'number' && item >= 0);
+}
+
+//Is the Number Symmetrical?
+function isSymmetrical(num) {
+    let numStr = num.toString();
+    let reversedStr = '';
+    for (let i = numStr.length - 1; i >= 0; i--) {
+        reversedStr += numStr[i];
+    }
+    if (numStr === reversedStr) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//Special Arrays
+function isSpecialArray(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (i % 2 === 0 && arr[i] % 2 !== 0) {
+            return false;
+        }
+        if (i % 2 !== 0 && arr[i] % 2 === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+//How Much is True?
+function countTrue(arr) {
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === true) {
+            count++;
+        }
+    }
+    return count;
+}
+
+//Convert Key, Values in an Object to Array
+function objectToArray(obj) {
+    let x = [];
+    for (let key in obj) {
+        let val = obj[key];
+        x.push([key, val]);
+    }
+    return x;
+}
+
+//Array of Multiples
+function arrayOfMultiples(num, length) {
+    let result = [];
+    for (let i = 1; i <= length; i++) {
+        result.push(num * i);
+    }
+    return result;
+}
+
+//25-Mile Marathon
+function marathonDistance(arr) {
+    if (!arr || arr.length === 0) {
+        return false;
+    }
+    
+    let x = 0;
+    
+    for (let i = 0; i < arr.length; i++) {
+        let distance = Math.abs(arr[i]);
+        x += distance;
+    }
+    
+    if (x === 25) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//Square Every Digit
+function squareDigits(num) {
+    let x = num.toString();
+    let squaredDigits = '';
+    
+    for (let i = 0; i < x.length; i++) {
+        let digit = parseInt(x[i]);
+        let squared = digit * digit;
+        squaredDigits += squared.toString();
+    }
+    return parseInt(squaredDigits);
+}
